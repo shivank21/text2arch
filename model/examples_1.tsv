@@ -1,0 +1,76 @@
+input	output
+A simple web application architecture with a frontend that connects to a backend API, which then connects to a database.	digraph{
+    rankdir=TB;
+    node [shape=box];
+    
+    Frontend [label="Frontend"];
+    Backend [label="Backend API"];
+    Database [label="Database"];
+    
+    Frontend -> Backend [label="HTTP requests"];
+    Backend -> Database [label="queries"];
+}
+A microservices architecture where a load balancer distributes requests to multiple service instances, each connecting to its own database.	digraph {
+    rankdir=TB;
+    node [shape=box];
+    
+    LoadBalancer [label="Load Balancer"];
+    Service1 [label="Service 1"];
+    Service2 [label="Service 2"];
+    Service3 [label="Service 3"];
+    DB1 [label="Database 1"];
+    DB2 [label="Database 2"];
+    DB3 [label="Database 3"];
+    
+    LoadBalancer -> Service1;
+    LoadBalancer -> Service2;
+    LoadBalancer -> Service3;
+    Service1 -> DB1;
+    Service2 -> DB2;
+    Service3 -> DB3;
+}
+A data processing pipeline where data flows from a source system through a processing engine and then to a destination system.	digraph{
+    rankdir=LR;
+    node [shape=box];
+    
+    Source [label="Source System"];
+    Processor [label="Processing Engine"];
+    Destination [label="Destination System"];
+    
+    Source -> Processor [label="raw data"];
+    Processor -> Destination [label="processed data"];
+}
+A message queue system where producers send messages to a queue, and consumers receive and process those messages.	digraph{
+    rankdir=LR;
+    node [shape=box];
+    
+    Producer1 [label="Producer 1"];
+    Producer2 [label="Producer 2"];
+    Queue [label="Message Queue"];
+    Consumer1 [label="Consumer 1"];
+    Consumer2 [label="Consumer 2"];
+    
+    Producer1 -> Queue [label="send"];
+    Producer2 -> Queue [label="send"];
+    Queue -> Consumer1 [label="receive"];
+    Queue -> Consumer2 [label="receive"];
+}
+A user authentication system where users login through a web interface, the system validates credentials against a database, and returns a JWT token.	digraph G {
+    rankdir=TB;
+    node [shape=box];
+    
+    User [label="User"];
+    WebInterface [label="Web Interface"];
+    AuthService [label="Authentication Service"];
+    Database [label="User Database"];
+    TokenService [label="JWT Token Service"];
+    
+    User -> WebInterface [label="login request"];
+    WebInterface -> AuthService [label="credentials"];
+    AuthService -> Database [label="validate"];
+    Database -> AuthService [label="user info"];
+    AuthService -> TokenService [label="generate token"];
+    TokenService -> AuthService [label="JWT token"];
+    AuthService -> WebInterface [label="token response"];
+    WebInterface -> User [label="authenticated"];
+}

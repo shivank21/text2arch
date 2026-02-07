@@ -1,0 +1,15 @@
+You will be given a short, cleaned description of an image. Your task is to significantly increase the length of the description while preserving *exactly* the same information content. Do not add any new details, facts, interpretations, architectural components, domain-specific terms, or any information not explicitly stated in the original description.
+
+You must only:
+- Rephrase, elaborate, and expand the phrasing of what is already present.
+- Use more descriptive language, redundant clarification, or extended explanations.
+- Maintain the original meaning strictly.
+- Avoid introducing any task-related details, instructions, or references to datasets, DOT code, models, or any processes outside of the original text.
+
+The output should be a verbose, highly expanded paraphrase that conveys the same information with no new content.
+
+INPUT:
+$CLEANED_DESCRIPTION_HERE
+
+OUTPUT:
+$A significantly longer version that preserves all original meaning and adds no new information.

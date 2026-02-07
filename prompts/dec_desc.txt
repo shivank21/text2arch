@@ -1,0 +1,16 @@
+You will be given a cleaned description of an image. Your task is to shorten the description while preserving *all* of the information contained in the original text. You must not remove any factual content, omit steps, or lose meaning.
+
+You must only:
+- Compress, condense, and streamline the language.
+- Merge sentences where possible without losing information.
+- Remove redundant phrasing but keep all details present in the original.
+- Avoid introducing any new content or changing meaning.
+- Do not mention any task-specific details, DOT code, metadata, or anything outside the given description.
+
+The output should be a shorter, more concise paraphrase that preserves every piece of original information.
+
+INPUT:
+$CLEANED_DESCRIPTION_HERE
+
+OUTPUT:
+A shorter version that conveys all original content with no loss of meaning and no new additions.

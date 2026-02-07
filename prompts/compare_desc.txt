@@ -1,0 +1,20 @@
+Your task is to:
+1. Analyze the given image along with two candidate textual descriptions (marked as Description 1 and Description 2).
+2. Determine which description better matches the content and semantics of the image.
+3. Return the index of the better matching description (either 1 or 2), followed by a short explanation justifying your choice.
+
+## Inputs:
+Image: $imageURL$
+Description 1: $description_1$
+Description 2: $description_2$
+
+## Output Format:
+<results>
+    <index>1</index> 
+    <explanation>The explanation should briefly describe why the selected description matches the image better.</explanation>
+</results>
+
+## Evaluation Criteria:
+- Accuracy of objects, people, and actions mentioned in the description.
+- Correctness of spatial relationships or layout depicted.
+- Relevance of the description to the overall theme and content of the image.

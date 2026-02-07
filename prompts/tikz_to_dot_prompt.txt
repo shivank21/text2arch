@@ -1,0 +1,25 @@
+Given the following LaTeX TikZ code:
+
+1. First, re-indent the TikZ part for readability.
+
+2. Then, extract all \node text labels and assign each a unique integer ID (e.g., 0, 1, 2...).
+
+3. Use the format: ID [label="..."]; to define each node.
+
+4. Infer reasonable directed edges based on layout or label semantics (e.g., data flow, left-to-right, top-to-bottom).
+
+5. Output the result as a DOT file using the below graph structure, starting directly with:
+
+digraph {
+    // Nodes
+    0 [label="..."];
+    ...
+
+    // Edges
+    0 -> 1;
+    ...
+}
+Do not include any rankdir or node settings.
+
+Here is the TikZ code:
+# Input Tikz Code

@@ -1,0 +1,29 @@
+You are an expert in analyzing research materials, particularly visual content such as architecture diagrams and system diagrams, and a code design specialist.
+
+Your task is to:
+
+1. Analyze both the DOT code and the image to identify any incorrect node labels, incorrect connections, or incorrect ordering of nodes.
+2. Refine the DOT code to ensure it accurately represents the structure and relationships depicted in the image.
+3. Output the corrected DOT file in a structured XML format.
+
+## Inputs:
+Image: $imageURL$
+Initial DOT code: $dot_code$ (which may contain errors or incomplete data)
+
+## Example Output:
+```
+<results>
+    <code><![CDATA[
+        digraph {
+            A -> B;
+            B -> C;
+            C -> D;
+        }
+    ]]></code>
+</results>
+```
+
+## Instructions:
+1. Ensure the refined DOT code fully represents the relationships in the image.
+2. Maintain proper indentation and formatting in the DOT code.
+3. Encapsulate the final DOT code within <![CDATA[ ]]> to prevent XML parsing issues.

@@ -1,0 +1,26 @@
+You are an expert at converting Graphviz DOT (digraph/graph) definitions into LaTeX TikZ code.
+Task: Convert the DOT code given as input into an equivalent TikZ (TikZ+graphdrawing or pure TikZ if graphdrawing not available) code block that can be compiled with LaTeX (produce a complete, standalone minimal LaTeX document).
+Requirements (READ CAREFULLY, do not change these):
+1. Preserve everything from the DOT input: node IDs, node labels (exact text), edge directions, edge connections, and the logical grouping/order. Do not modify labels, capitalization, punctuation, or node IDs.
+2. Maintain the graph type (directed vs undirected) and edge arrowheads so the semantics remain identical.
+3. Reproduce the structure/layout as closely as possible. If DOT includes rank or subgraph/cluster information, preserve it as TikZ comments and try to emulate grouping visually (e.g., using \n\t\t"subgraph" nodes or TikZ scopes).
+4. Preserve node/edge attributes when possible (shape, style, color, fontsize). If an attribute has no direct TikZ equivalent, insert a commented line in the generated TikZ code that records the original DOT attribute (so nothing is lost).
+5. Do NOT rewrite the diagram text, do not simplify or rename nodes, and do not reorder nodes/edges except where necessary for TikZ syntax. Any reordering must be mechanically necessary and the original ordering must be preserved in a commented block at the top.
+6. The output must be ONLY the TikZ-containing LaTeX document — do NOT include the original DOT input, explanations, or any commentary. The output should compile with pdflatex (or lualatex/xelatex) without requiring external non-standard packages beyond TikZ and TikZ libraries commonly available (graphdrawing optional).
+7. If the input DOT uses multiple disconnected graphs or multiple graph statements, produce separate TikZ pictures for each, clearly separated.
+8. If the DOT uses numeric node IDs (e.g., 0, 1, 2) use those same IDs as node names in TikZ (prefix with N if necessary to make valid identifiers — but keep original IDs visible as labels).
+9. For sequences of chained operations (e.g., CONV -> BN -> RELU -> CONV -> MaxPool), preserve the chain order and visually place them in a left-to-right or top-to-bottom sequence matching the DOT ordering.
+10. If the DOT contains explicit ports, edge labels, or arrowheads, preserve them exactly as in the DOT (render edge labels as TikZ edge node labels).
+11. If you encounter unsupported DOT constructs, do not drop them — include a commented section showing the original construct and an explanation (one line) of how it was mapped or why it could not be mapped precisely.
+Formatting rules for the output file:
+ Produce a minimal standalone LaTeX document that compiles (includes \documentclass{standalone} or article with preview, \usepackage{tikz}, and necessary \usetikzlibrary lines).
+ - Wrap the actual drawing in a \begin{tikzpicture}...\end{tikzpicture} environment. If graphdrawing is used, include \usegdlibrary{force} or appropriate libraries and provide fallback coordinates if graphdrawing is unavailable.
+ - Use comments ("% ...") to preserve the original DOT text at the top of the file. The original DOT must appear verbatim as a commented block so the conversion is traceable.
+ - Keep the resulting TikZ code neat and indented.
+ 
+ 
+ Input (DOT):
+ <---BEGIN DOT--->
+ {{DOT_INPUT}}
+ ---END DOT---
+ Output: Produce ONLY the complete LaTeX/TikZ source that implements the DOT graph above, nothing else. Do not add any extra text before or after the LaTeX code.

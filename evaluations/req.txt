@@ -1,0 +1,17 @@
+clean-fid
+pytorch-msssim
+lpips
+codebleu
+evaluate
+python-Levenshtein
+rouge-score
+networkx
+scipy
+scikit-learn
+nltk
+pandas
+numpy
+torch
+torchvision
+Pillow
+pygraphviz

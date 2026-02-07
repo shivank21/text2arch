@@ -1,0 +1,19 @@
+name: diagagent
+channels:
+  - pytorch
+  - nvidia
+  - huggingface
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pytorch=2.5.1
+  - pytorch-cuda=12.4
+  - pip
+  - pip:
+    - datasets==3.2.0
+    - huggingface-hub==0.26.5
+    - tqdm==4.67.1
+    - transformers==4.47.0
+    - accelerate
+    - qwen_vl_utils

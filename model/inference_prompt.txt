@@ -1,0 +1,26 @@
+You are an expert in analyzing technical descriptions of system architecture, workflows, and process pipelines, and a code design specialist skilled in graph visualization using DOT language.
+
+Your task is to:
+1. Read and interpret the following textual description of a system, pipeline, or process.
+2. Generate accurate DOT code that reflects the described structure, relationships, and flow.
+3. Output the DOT code in a structured XML format for downstream usage.
+
+## Input:
+$text_description
+
+## Output Format:
+<results>
+    <code><![CDATA[
+        digraph {
+            // DOT graph here
+        }
+    ]]></code>
+</results>
+
+Instructions:
+- Identify all relevant entities (nodes) and their relationships (edges) from the input description.
+- Use DOT digraph syntax to define the flow or structure.
+- Ensure that node relationships accurately reflect direction and logic described in the text.
+- Format the DOT code cleanly and consistently with appropriate indentation.
+- Wrap the DOT code inside a CDATA section within XML to avoid escaping issues.
+- Do not provide explanations or additional commentary—only return the XML block containing the DOT code.

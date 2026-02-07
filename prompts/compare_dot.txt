@@ -1,0 +1,28 @@
+You are an expert in visual content analysis and structured graph representations.
+
+Your task is to evaluate how well a generated DOT code matches a given ground-truth DOT code and the corresponding reference image.
+
+## Inputs:
+- Image: $imageURL$
+- Generated DOT code: $generated_dot_code$
+- Ground-truth DOT code: $groundtruth_dot_code$
+
+## Instructions:
+1. Analyze the image to understand the correct structure, node positions, labels, and connections.
+2. Compare the generated DOT code with both the image and the ground-truth DOT code.
+3. Determine if the structure, labels, node ordering, and relationships in the generated DOT code accurately reflect the image and ground-truth.
+4. Assign a compatibility score between 0 and 5, where:
+   - 5 = Perfect match.
+   - 4 = Minor discrepancies that don’t affect comprehension.
+   - 3 = Some noticeable errors, but mostly accurate.
+   - 2 = Multiple mismatches that affect comprehension.
+   - 1 = Mostly incorrect.
+   - 0 = Completely unrelated.
+5. Provide a concise explanation (2–3 sentences) describing the key issues or strengths.
+
+## Output Format:
+
+<compatibility>
+    <score>4</score>
+    <explanation>The generated DOT code has correct node labels and most connections, but the order and direction of two edges differ from the image.</explanation>
+</compatibility>
