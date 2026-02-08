@@ -105,3 +105,19 @@ python evaluations/text_metrics.py \
     --test_tsv_file ./data/test.tsv \
     -o results.csv
 ```
+
+## Dataset
+
+The dataset is available on Hugging Face: [shivank21/text2archdata](https://huggingface.co/datasets/shivank21/text2archdata)
+
+It contains the following files:
+- **dot2.tsv** — Labeled data generated using the dot2 pipeline
+- **dot3.tsv** — Labeled data generated using the dot3 pipeline
+- **newTest.tsv** — Test set
+- **manual.tsv** — Manually annotated test set
+
+## Our Trained Checkpoints
+
+- **DeepSeek:** [shivank21/text2arch-deepseek](https://huggingface.co/shivank21/text2arch-deepseek)
+- **Qwen:** [shivank21/text2arch-qwen](https://huggingface.co/shivank21/text2arch-qwen)
+- **Llama:** [shivank21/text2arch-llama](https://huggingface.co/shivank21/text2arch-llama)

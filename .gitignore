@@ -4,6 +4,9 @@
 # Task management
 tasks/
 
+
+/data/
+data/
 # Python
 __pycache__/
 *.py[cod]
